@@ -18,7 +18,9 @@ Those wil be your...
 
 
 """
+st.write('hello')
 
+st.button('yes')
 Name = st.text_input("Enter in your name")
 
 Age = st.number_input("Enter in your Age" , value = 1, step=1, format="%d")
