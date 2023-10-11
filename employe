@@ -1,0 +1,15 @@
+import streamlit as st
+import pandas as pd #this lets you read, display dataframes
+#Name,Clazz,Position
+st.title("Student's Databas App")
+
+#This function helps us to get student's data
+#def new_student(name,clazz,position):
+#    student_dict = {"Name":name, "Class":clazz, "Position": position}
+
+
+#Load the employee CSV file as a dataframe
+df = pd.read_csv("employeemoyo.csv")
+st.dataframe(df)
+
+#simple homework: download a csv file from the internet and read, display it with python streamlit

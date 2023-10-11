@@ -1,0 +1,36 @@
+Import Modules:
+streamlit = this is used to display the code online
+pandas = this is used to read the csv file
+
+Menu 
+This is to navigate easily between all the pages...
+
+...PAGES:
+Restritrationpage:
+    This is the page that is used to register the Employees infomation
+    Info needed:
+        Firstname
+        lastname
+        Email
+        Gender
+        Salary
+        Education status
+        Work status
+
+
+Employee Database:
+    This is the page that is used to store all the info that was gathered from the registration page
+
+Employee file:
+    This page is use to seaarch for an Employee info instead of looking through the csv file
+
+CSV file:
+Pandas read the csv file 
+Pandas then coverts it into a dataframe
+Streamlit views it
+
+SUBMIT BUTTON:
+This Button checks if you put in all the infomation
+then it adds it to
+
+
