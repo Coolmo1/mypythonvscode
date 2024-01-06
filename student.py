@@ -20,24 +20,18 @@ Personal Data: Name, Age, class
 Scores: science, english ,math, history, biology grades
 """
 
-def new_stundent(name,age,clazz, science,english,math,history,biology,total,average,grades, df):
-    student_dict = {"Name":name, "Age":age, "Class" :clazz, "Science" :science, "English" : english, "Math":math, "History":history, "Biology":biology,"Total" : total,"Average" : average,"Grades" : grades }
-    student_df = pd.DataFrame([student_dict]) 
-    df = pd.concat([df,student_df], ignore_index = True)
-    return df
-
-df = pd.read_csv("stundent.csv")
+df = pd.read_csv("student.csv")
 st.dataframe(df)
 
 name = st.text_input("Enter in your name")
 age = st.number_input("Enter in your Age",0,150,value=0,step=1,format= "%d")
 clazz = st.text_input("Enter which class you are in")
 
-science = st.number_input("Enter in your science grade ",0,100,value=0,step=1,format= "%d")
-english = st.number_input("Enter in your english grade ",0,100,value=0,step=1,format= "%d")
-math = st.number_input("Enter in your maths grade ",0,100,value=0,step=1,format= "%d")
-history = st.number_input("Enter in your history grade ",0,100,value=0,step=1,format= "%d")
-biology = st.number_input("Enter in your biology grade ",0,100,value=0,step=1,format= "%d")
+science = st.number_input("Enter in your science grade ",0,100)
+english = st.number_input("Enter in your english grade ",0,100)
+math = st.number_input("Enter in your maths grade ",0,100)
+history = st.number_input("Enter in your history grade ",0,100)
+biology = st.number_input("Enter in your biology grade ",0,100)
 total = math +english +history+biology +science
 average = total / 5
 
@@ -85,8 +79,11 @@ if average <= 50 :
 
 if st.button("Add student data"):
     if name and clazz and age and science and english and math and history and biology: 
-        df = new_stundent(name,clazz,age,science,english,math,history,biology,total,average,grades,df) 
-        df.to_csv("stundent.csv", index= False)
+        employee_dict = {"Name":[name], "Age":[age], "Class" :[clazz], "Science" :[science], "English" : [english],
+         "Math":[math], "History":[history], "Biology":[biology],"Total" : [total],"Average" : [average],"Grades" : [grades] }
+        employee_df = pd.DataFrame(employee_dict)
+        new_df = pd.concat([df,employee_df],ignore_index=True)
+        new_df.to_csv('student.csv',index=False)
         st.success("Student data successfully added")
         
     else: 

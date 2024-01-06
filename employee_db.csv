@@ -1,4 +1,6 @@
-Firstname,Email,Education,Dept,Registrationdate,Lastname,Gender,Salary,Job,Employee,Employee ID
-Moyo,cool@gmail.com,Bacherlors,Engineering Dept,2023-09-20,Banana,Male,20000,Junior,Full Time,USER1
-moyo,Bacherlors,Engineering Dept,2023-09-21,Adeola,cool.moyo@gmail.com,Female,50000,Junior,Full Time,USER2
-timothy,OND,Engineering Dept,2023-09-27,Adams,timothy.a@gamil.com,Male,50000,Junior,Full Time,USER3
+Employee ID,Firstname,Lastname,Gender,Email,Education,Department,Salary,Job Title,Employeestatus,Registrationdate,Employmentdate
+USER1,Jason,Adams,Female,jason.adams@gmail.com,None/Out of school,Medical Dept,50000,Junior,Part time,2023-11-08,2022-01-14
+USER2,Maya,Lorence,Female,maya.lorence@outlook.com,Bacherlors,Acounting Dept,10000,Senior,Full Time,2023-11-08,2023-11-08
+USER3,Jessica,Angelica,Male,jessica.angelina@gmail.com,OND,HumanResources Dept,20000,Senior,Full Time,2023-11-08,2023-11-06
+USER4,Kylie,Florence,Female,kylie.florence@yahoo.com,Bacherlors,Acounting Dept,3000,Junior,Full Time,2023-11-13,2023-11-01
+USER5,Moyo,Adeola,Female,moyo.adeola@gmil.com,Masters,Department,1000,Intern,Part time,2023-11-22,2023-11-22
