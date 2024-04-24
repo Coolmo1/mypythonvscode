@@ -6,7 +6,7 @@ import pandas as pd
 
 #this is to set the page to full screen
 st.set_page_config(layout='wide')
-menu = st.sidebar.selectbox('Menu',['Registration','Employee File','Database']) #menu bar
+menu = st.sidebar.selectbox('Menu',['Registration','Database','Employee File']) #menu bar
 
 #this is to read the csv file
 df = pd.read_csv("employee_db.csv")
@@ -52,8 +52,9 @@ pass1,pass2 = st.sidebar.columns(2)
 # this is for the search
 if menu == 'Database':
     st.title('Employee Database')
+    st.sidebar.write('Password:',corectpassword)
     with pass1:
-        password = st.sidebar.text_input("Enter in the correct password")
+        password = st.sidebar.text_input("Enter in the correct password",type='password')
         login = st.sidebar.button("login")
     if login:
         if password:
@@ -75,7 +76,7 @@ if menu == 'Employee File':
         search = st.button("Search Employee")
     if search:
         if employeesearch:
-            search_result=df[df["Employee ID"]== employeesearch]
+            search_result=df[df["Employee ID"].str.lower()== employeesearch.lower()]
                         #the abov is a new df that has been filtered to show only the row in employee Id that contains the employee search
             gfname = search_result["Firstname"].iloc[0] #firstname and lastname and gender and email and education and salary and dept and salary and job and emp_status and redate and emdate
             gflname = search_result["Lastname"].iloc[0]
