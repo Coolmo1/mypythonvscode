@@ -14,6 +14,8 @@ df = pd.read_csv("employee_db.csv")
 #this is to give every the user a user id by the number of rows in the df
 employee_id = 'USER' + str(len(df) +1)
 
+st.sidebar.write("Made By Moyo👍❤️")
+
 if menu == 'Registration':
 
     st.title ("Register Here")
