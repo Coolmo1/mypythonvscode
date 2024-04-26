@@ -19,6 +19,8 @@ menu = st.sidebar.selectbox("Menu",["Registration","Donor Database"])
 
 df = pd.read_csv("Donor.csv")
 
+st.sidebar.write("Made By Moyo👍❤️")
+
 
 
 if menu == "Registration":
@@ -30,8 +32,8 @@ if menu == "Registration":
         contactinfo = st.text_input("Enter your phone number or email")
 
     with col2:
-       blood = st.radio("blood type",["A","B","AB","O"])
-       d = st.radio("Are you prond to having disease or diseased",["yes","no"])
+       blood = st.radio("Blood type",["A","B","AB","O"])
+       d = st.radio("Are you pronde to having disease or diseases",["yes","no"])
 
     if st.button("submit"):
         if name and age and contactinfo and blood and d:
