@@ -19,9 +19,11 @@ menu = st.sidebar.selectbox("Menu",["Registration","Donor Database"])
 
 df = pd.read_csv("Donor.csv")
 
-col1,col2 = st.columns(2)
+
 
 if menu == "Registration":
+    st.title("Come and donate")
+    col1,col2 = st.columns(2)
     with col1:
         name = st.text_input("Enter in your name")
         age = st.number_input("Enter in your age",18)
