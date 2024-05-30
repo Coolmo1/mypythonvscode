@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 
 #this is to set the page to full screen
-st.set_page_config(layout='wide')
+
 menu = st.sidebar.selectbox('Menu',['Registration','Database','Employee File']) #menu bar
 
 #this is to read the csv file
