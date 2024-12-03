@@ -45,7 +45,7 @@ if menu == "Create Donation":
                 dnjoin.to_csv("donate.csv",index=False)
                 st.success("Created")
             else:
-                st.error("FIll in all the boxes")
+                st.error("Fill in all the boxes")
 
 if menu == "View Donation":
     st.subheader(":orange[View Donation]")
@@ -71,15 +71,18 @@ if menu == "View Donation":
     with col3:
         st.subheader(":orange[Campaign details]")    
     with col4:
-        st.subheader(f":black[Goal amount:] :green[${getg:,}]")
+        st.subheader(f":black[Goal amount:]")
+        st.subheader(f":green[${getg:,}]")
     with col5:
         try:
             sumleft = donateadd[chtitle].sum()
             sumremainder = getg - sumleft
             if sumremainder < 0:
-                st.subheader(f":black[Total Left:] :green[Goal reached]")
+                st.subheader(f"Total Left:")
+                st.subheader(":green[Goal reached]")
             else:
-                st.subheader(f":black[Total Left:] :red[${sumremainder:,}]")
+                st.subheader(f"Total Left: ")
+                st.subheader(f":red[${sumremainder:,}]")
         except KeyError:
             st.error("Sorry no donation yet")
         
