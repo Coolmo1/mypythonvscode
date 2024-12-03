@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",page_title="DOnate to a cause",page_icon="💰💵❤️")
 
 menu = st.sidebar.selectbox("Select Option",["Create Donation", "View Donation", "Make a Donation"])
 
@@ -71,12 +71,15 @@ if menu == "View Donation":
     with col3:
         st.subheader(":orange[Campaign details]")    
     with col4:
-        st.subheader(f":black[Goal amount:] :green[$:{getg:,}]")
+        st.subheader(f":black[Goal amount:] :green[${getg:,}]")
     with col5:
         try:
-            filterleft = donateadd[chtitle].sum()
-            ltable = pd.DataFrame()
-            st.subheader(f":black[Total Left:] :red[${filterleft:,}]")
+            sumleft = donateadd[chtitle].sum()
+            sumremainder = getg - sumleft
+            if sumremainder < 0:
+                st.subheader(f":black[Total Left:] :green[Goal reached]")
+            else:
+                st.subheader(f":black[Total Left:] :red[${sumremainder:,}]")
         except KeyError:
             st.error("Sorry no donation yet")
         
@@ -103,7 +106,7 @@ if menu == "Make a Donation":
         if choose_title and doamount:
             donatedict = {f"{choose_title}":[doamount]}   
             dotable = pd.DataFrame(donatedict)
-            st.table(dotable)
+           # st.table(dotable)
             donatejoin = pd.concat([donateadd, dotable],ignore_index=False)
             donatejoin.to_csv("donate add.csv",)
             st.success("Thank you for donating")
