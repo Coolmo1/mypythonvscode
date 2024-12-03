@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(layout="wide",page_title="DOnate to a cause",page_icon="💰💵❤️")
+st.set_page_config(layout="wide",page_title="Donate to a cause",page_icon="💰💵❤️")
 
 menu = st.sidebar.selectbox("Select Option",["Create Donation", "View Donation", "Make a Donation"])
 
