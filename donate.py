@@ -71,7 +71,7 @@ if menu == "View Donation":
     with col3:
         st.subheader(":orange[Campaign details]")    
     with col4:
-        st.subheader(f":black[Goal amount:]")
+        st.subheader(f"Goal amount:")
         st.subheader(f":green[${getg:,}]")
     with col5:
         try:
